@@ -3,3 +3,8 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.jetbrains.kotlin.android) apply false
 }
+
+// cleanタスクの明示的な定義
+tasks.register("clean", Delete::class) {
+    delete(rootProject.buildDir)
+}
